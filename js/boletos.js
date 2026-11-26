@@ -112,10 +112,12 @@ async function cargarBoleto() {
             actualizarBoletoDiurno(funcion, pelicula);
         }
 
-        // 6. Mostrar boleto
+       // 6. Mostrar boleto
 
         areaBoleto.hidden = false;
         accionesBoleto.hidden = false;
+
+        requestAnimationFrame(ajustarBoletoMovil);
 
         mensajeBoleto.textContent = "¡Tu boleto está listo! ♡";
 
@@ -239,8 +241,47 @@ function formatearHora12(hora) {
 
 
 // ========================================
+// AJUSTAR BOLETO A LA PANTALLA
+// ========================================
+
+function ajustarBoletoMovil() {
+
+    const boleto = areaBoleto.firstElementChild;
+
+    if (!boleto || areaBoleto.hidden) return;
+
+    // Ancho original del boleto: 960px
+    const anchoOriginal = 960;
+
+    // Espacio disponible en pantalla
+    const anchoDisponible = areaBoleto.clientWidth;
+
+    // Calcular escala proporcional
+    const escala = Math.min(
+        1,
+        anchoDisponible / anchoOriginal
+    );
+
+    boleto.style.transform = `scale(${escala})`;
+
+    // Compensar el espacio que ocupa visualmente
+    // la transformación para evitar huecos.
+    boleto.style.marginBottom =
+        `-${boleto.offsetHeight * (1 - escala)}px`;
+}
+
+
+// Reajustar cuando cambie el tamaño de pantalla
+window.addEventListener("resize", ajustarBoletoMovil);
+
+
+
+
+
+// ========================================
 // DESCARGAR BOLETO JPG
 // ========================================
+
 
 async function descargarBoleto() {
 
@@ -249,22 +290,36 @@ async function descargarBoleto() {
     botonDescargar.disabled = true;
     botonDescargar.textContent = "GENERANDO IMAGEN...";
 
+    const boleto = areaBoleto.firstElementChild;
+
+    // Guardar los estilos de visualización
+    const transformacionAnterior = boleto.style.transform;
+    const margenAnterior = boleto.style.marginBottom;
+
     try {
 
         await document.fonts.ready;
 
-        const boleto = areaBoleto.firstElementChild;
+        // Quitar temporalmente la escala móvil
+        boleto.style.transform = "none";
+        boleto.style.marginBottom = "0px";
 
+        await new Promise(resolve =>
+            requestAnimationFrame(resolve)
+        );
+
+        // Capturar el diseño a su tamaño original
         const lienzo = await html2canvas(boleto, {
             scale: 2,
             useCORS: true,
-            backgroundColor: null
+            backgroundColor: null,
+            width: 960,
+            windowWidth: 960
         });
 
         const enlace = document.createElement("a");
 
         enlace.download = "boleto-cine-de-nosotros.jpg";
-
         enlace.href = lienzo.toDataURL("image/jpeg", 0.95);
 
         enlace.click();
@@ -276,6 +331,10 @@ async function descargarBoleto() {
         alert("No se pudo generar la imagen del boleto.");
 
     } finally {
+
+        // Restaurar la visualización móvil
+        boleto.style.transform = transformacionAnterior;
+        boleto.style.marginBottom = margenAnterior;
 
         botonDescargar.disabled = false;
         botonDescargar.textContent = "DESCARGAR BOLETO JPG ↓";

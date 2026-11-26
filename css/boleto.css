@@ -365,39 +365,6 @@ body {
     padding-left: 4px;
 }
 
-/* =========================================================
-   ADAPTACIÓN PARA PANTALLAS PEQUEÑAS
-   ========================================================= */
-
-@media (max-width: 768px) {
-    .ticket-bw,
-    .ticket-red {
-        flex-direction: column;
-        background: #fff;
-    }
-
-    .ticket-red {
-        background: #fdfbe6;
-    }
-
-    .ticket-bw-main,
-    .ticket-bw-stub,
-    .ticket-red-main,
-    .ticket-red-stub {
-        width: 100%;
-        border-right: none;
-    }
-
-    .ticket-bw-main {
-        border-bottom: 3px dashed #242424;
-        flex-direction: column;
-    }
-
-    .ticket-red-main {
-        border-bottom: 3px dotted #8a4a4a;
-        flex-direction: column;
-    }
-}
 
 
 /* =========================================================

@@ -1,0 +1,41 @@
+
+/* ========================================
+   VISUALIZACIÓN RESPONSIVA DE BOLETOS
+   Conserva el diseño horizontal original
+   ======================================== */
+
+.area-boleto {
+    display: block;
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    position: relative;
+    overflow: visible;
+}
+
+/* Mantener las dimensiones originales */
+
+.area-boleto > .ticket-bw-wrapper,
+.area-boleto > .ticket-red-wrapper {
+    width: 960px;
+    max-width: none;
+    flex-shrink: 0;
+
+    position: relative;
+    left: 50%;
+    margin-left: -480px;
+
+    transform-origin: top center;
+}
+
+/* Evitar desbordamientos de la página */
+
+@media (max-width: 768px) {
+    .area-boleto {
+        overflow: visible;
+    }
+
+    .pagina-boletos {
+        overflow-x: hidden;
+    }
+}

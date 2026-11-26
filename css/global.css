@@ -1,0 +1,322 @@
+
+/* =====================================
+   CINE DE NOSOTROS
+   ESTILOS GENERALES
+===================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap');
+
+:root {
+    --rojo: #851c29;
+    --rojo-oscuro: #4d1019;
+    --negro: #130e0d;
+    --negro-suave: #211715;
+    --dorado: #c9a45c;
+    --dorado-claro: #ead5a1;
+    --crema: #f4ead5;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--negro);
+    color: var(--crema);
+    font-family: 'Playfair Display', serif;
+    min-height: 100vh;
+}
+
+/* =====================================
+   ENCABEZADO
+===================================== */
+
+.encabezado {
+    width: 100%;
+    min-height: 75px;
+    padding: 15px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #170e0e;
+    border-bottom: 1px solid rgba(201, 164, 92, 0.35);
+}
+
+.logo {
+    color: var(--dorado-claro);
+    font-family: 'Cinzel', serif;
+    font-size: 17px;
+    font-weight: 700;
+    text-decoration: none;
+    letter-spacing: 2px;
+}
+
+.logo-icono {
+    color: var(--dorado);
+    margin-right: 8px;
+}
+
+.navegacion {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.navegacion a {
+    color: #d4c5ad;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.navegacion a:hover,
+.navegacion a.activo {
+    color: var(--dorado);
+}
+
+.navegacion .acceso-admin {
+    border: 1px solid var(--dorado);
+    padding: 9px 16px;
+    border-radius: 3px;
+}
+
+/* =====================================
+   PORTADA
+===================================== */
+
+.portada {
+    min-height: 690px;
+    height: calc(100vh - 130px);
+    max-height: 900px;
+
+    position: relative;
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            #4b2020 0%,
+            #241414 48%,
+            #100c0b 100%
+        );
+}
+
+/* CORTINAS DECORATIVAS */
+
+.cortina {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 14%;
+    z-index: 1;
+    opacity: 0.9;
+}
+
+.cortina-izquierda {
+    left: 0;
+    background:
+        repeating-linear-gradient(
+            90deg,
+            #3e0d15,
+            #861d2b 25px,
+            #4d1019 48px
+        );
+    border-right: 3px solid #9b7540;
+    box-shadow: 15px 0 35px #0008;
+}
+
+.cortina-derecha {
+    right: 0;
+    background:
+        repeating-linear-gradient(
+            90deg,
+            #4d1019,
+            #861d2b 25px,
+            #3e0d15 48px
+        );
+    border-left: 3px solid #9b7540;
+    box-shadow: -15px 0 35px #0008;
+}
+
+/* CONTENIDO */
+
+.contenido-portada {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 40px 20px;
+    max-width: 800px;
+}
+
+.etiqueta {
+    color: var(--dorado);
+    font-family: 'Cinzel', serif;
+    font-size: 12px;
+    letter-spacing: 5px;
+    margin-bottom: 30px;
+}
+
+.contenido-portada h1 {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(38px, 7vw, 76px);
+    line-height: 1.25;
+    letter-spacing: 5px;
+    color: var(--crema);
+    text-shadow: 0 4px 15px #000;
+}
+
+.contenido-portada h1 span {
+    display: block;
+    color: var(--dorado);
+}
+
+.separador {
+    color: var(--dorado);
+    margin: 25px auto;
+    width: 220px;
+    border-top: 1px solid var(--dorado);
+    position: relative;
+}
+
+.separador span {
+    position: relative;
+    top: -13px;
+    background: #321817;
+    padding: 0 12px;
+}
+
+.descripcion {
+    font-size: 23px;
+    margin-bottom: 12px;
+    color: var(--crema);
+}
+
+.subdescripcion {
+    font-size: 15px;
+    color: #c8b9a3;
+    margin-bottom: 40px;
+}
+
+/* BOTÓN */
+
+.boton-cartelera {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+
+    padding: 16px 30px;
+
+    background: var(--rojo);
+    border: 1px solid var(--dorado);
+
+    color: var(--dorado-claro);
+    text-decoration: none;
+
+    font-family: 'Cinzel', serif;
+    font-size: 13px;
+    letter-spacing: 2px;
+
+    transition: 0.3s;
+}
+
+.boton-cartelera:hover {
+    background: #a52b38;
+    box-shadow: 0 0 25px #c9a45c55;
+    transform: translateY(-3px);
+}
+
+.boton-cartelera span {
+    font-size: 20px;
+}
+
+/* PIE DE PORTADA */
+
+.pie-portada {
+    color: var(--dorado);
+    font-family: 'Cinzel', serif;
+    font-size: 10px;
+    letter-spacing: 3px;
+    margin-top: 65px;
+}
+
+.decoracion-inferior {
+    position: absolute;
+    bottom: 20px;
+    color: #a58b60;
+    font-family: 'Cinzel', serif;
+    font-size: 10px;
+    letter-spacing: 3px;
+}
+
+/* =====================================
+   FOOTER
+===================================== */
+
+.pie-pagina {
+    text-align: center;
+    padding: 20px;
+    color: #a9977d;
+    background: #170e0e;
+    border-top: 1px solid #604b2c;
+    font-size: 13px;
+}
+
+/* =====================================
+   RESPONSIVE
+===================================== */
+
+@media (max-width: 650px) {
+
+    .encabezado {
+        flex-direction: column;
+        gap: 18px;
+        padding: 20px 10px;
+    }
+
+    .navegacion {
+        gap: 16px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .navegacion a {
+        font-size: 12px;
+    }
+
+    .portada {
+        min-height: 650px;
+    }
+
+    .cortina {
+        width: 7%;
+    }
+
+    .etiqueta {
+        font-size: 9px;
+        letter-spacing: 3px;
+    }
+
+    .descripcion {
+        font-size: 19px;
+    }
+
+    .subdescripcion {
+        font-size: 13px;
+    }
+
+    .boton-cartelera {
+        font-size: 11px;
+        padding: 14px 18px;
+    }
+
+    .pie-portada {
+        font-size: 8px;
+    }
+}

@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cartelera | Cine de Nosotros</title>
+
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/cartelera.css">
+</head>
+
+<body>
+
+    <header class="encabezado">
+
+        <a href="index.html" class="logo">
+            <span class="logo-icono">✦</span>
+            CINE DE NOSOTROS
+        </a>
+
+        <nav class="navegacion">
+            <a href="index.html">Inicio</a>
+            <a href="cartelera.html" class="activo">Cartelera</a>
+            <a href="admin/login.html" class="acceso-admin">
+                Administración
+            </a>
+        </nav>
+
+    </header>
+
+    <main class="contenedor-cartelera">
+
+        <section class="introduccion-cartelera">
+
+            <p class="etiqueta-cartelera">
+                ✦ NUESTRA SELECCIÓN ESPECIAL ✦
+            </p>
+
+            <h1>NUESTRA <span>CARTELERA</span></h1>
+
+            <div class="separador-cartelera">
+                <span>◆</span>
+            </div>
+
+            <p>
+                Elige una película y preparemos
+                nuestra próxima función.
+            </p>
+
+        </section>
+
+        <section class="seccion-peliculas">
+
+            <div class="encabezado-seccion">
+                <h2>PELÍCULAS DISPONIBLES</h2>
+                <span>✦</span>
+            </div>
+
+            <div id="lista-cartelera" class="lista-cartelera">
+
+                <p class="mensaje-cartelera">
+                    Preparando nuestra cartelera...
+                </p>
+
+            </div>
+
+        </section>
+
+        <p class="mensaje-final-cartelera">
+            UNA FUNCIÓN ESPECIAL PARA DOS ♡
+        </p>
+
+    </main>
+
+    <footer class="pie-pagina">
+        <p>Hecho para disfrutar juntos ♡</p>
+    </footer>
+
+    <!-- SUPABASE -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/supabase.js"></script>
+
+    <!-- CARTELERA -->
+
+    <script src="js/cartelera.js"></script>
+
+</body>
+</html>

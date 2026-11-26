@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tu boleto | Cine de Alex</title>
+
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/boleto.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@500;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+</head>
+
+<body class="pagina-boletos">
+
+    <header class="encabezado">
+
+        <a href="index.html" class="logo">
+            <span class="logo-icono">✦</span>
+            CINE DE ALEX
+        </a>
+
+        <nav class="navegacion">
+            <a href="index.html">Inicio</a>
+            <a href="cartelera.html">Cartelera</a>
+        </nav>
+
+    </header>
+
+    <main class="contenedor-boletos">
+
+        <section class="encabezado-boletos">
+            <p class="etiqueta-cartelera">✦ UNA FUNCIÓN ESPECIAL ✦</p>
+            <h1>TU <span>BOLETO</span></h1>
+            <p>Una peli para ver juntitoh ♡</p>
+        </section>
+
+        <div id="mensaje-boleto" class="mensaje-boleto">
+            Preparando tu boleto...
+        </div>
+
+        <section id="area-boleto" class="area-boleto" hidden>
+            <!-- Aquí se insertará el diseño original -->
+        </section>
+
+        <div id="acciones-boleto" class="acciones-boleto" hidden>
+
+            <button id="btn-descargar" type="button">
+                DESCARGAR BOLETO JPG ↓
+            </button>
+
+            <a href="cartelera.html">
+                ← VOLVER A LA CARTELERA
+            </a>
+
+        </div>
+
+        <a id="volver-error" href="cartelera.html" hidden>
+            ← VOLVER A LA CARTELERA
+        </a>
+
+    </main>
+
+    <footer class="pie-pagina">
+        <p>Hecho para ti, bombon ♡</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/supabase.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+
+    <script src="js/boletos.js"></script>
+
+</body>
+</html>

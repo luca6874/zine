@@ -1,1 +1,292 @@
-    
+
+/* =====================================
+   CARTELERA
+   CINE DE NOSOTROS
+===================================== */
+
+.contenedor-cartelera {
+    width: 100%;
+    max-width: 1250px;
+    margin: auto;
+    padding: 65px 7%;
+}
+
+/* =====================================
+   INTRODUCCIÓN
+===================================== */
+
+.introduccion-cartelera {
+    text-align: center;
+    margin-bottom: 65px;
+}
+
+.etiqueta-cartelera {
+    color: var(--dorado);
+    font-family: 'Cinzel', serif;
+    font-size: 11px;
+    letter-spacing: 4px;
+    margin-bottom: 22px;
+}
+
+.introduccion-cartelera h1 {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(32px, 5vw, 55px);
+    color: var(--crema);
+    letter-spacing: 3px;
+}
+
+.introduccion-cartelera h1 span {
+    color: var(--dorado);
+}
+
+.introduccion-cartelera > p:last-child {
+    color: #c8b9a3;
+    font-size: 17px;
+}
+
+.separador-cartelera {
+    width: 180px;
+    border-top: 1px solid var(--dorado);
+    margin: 25px auto;
+    position: relative;
+}
+
+.separador-cartelera span {
+    position: relative;
+    top: -12px;
+    padding: 0 12px;
+    color: var(--dorado);
+    background: var(--negro);
+}
+
+/* =====================================
+   ENCABEZADO DE SECCIÓN
+===================================== */
+
+.encabezado-seccion {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(201, 164, 92, 0.4);
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+}
+
+.encabezado-seccion h2 {
+    color: var(--dorado-claro);
+    font-family: 'Cinzel', serif;
+    font-size: 19px;
+    letter-spacing: 2px;
+}
+
+.encabezado-seccion span {
+    color: var(--dorado);
+    font-size: 22px;
+}
+
+/* =====================================
+   LISTA DE PELÍCULAS
+===================================== */
+
+.lista-cartelera {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 30px;
+}
+
+.tarjeta-cartelera {
+    display: grid;
+    grid-template-columns: 160px minmax(0, 1fr);
+    gap: 22px;
+    padding: 20px;
+
+    background: var(--negro-suave);
+    border: 1px solid rgba(201, 164, 92, 0.25);
+    border-radius: 4px;
+
+    transition: 0.3s;
+}
+
+.tarjeta-cartelera:hover {
+    border-color: var(--dorado);
+    box-shadow: 0 8px 25px #0006;
+    transform: translateY(-3px);
+}
+
+/* PORTADA */
+
+.portada-pelicula {
+    width: 100%;
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+    background: #100c0b;
+    border: 1px solid #765b36;
+}
+
+.portada-faltante {
+    width: 100%;
+    aspect-ratio: 2 / 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #321b1a;
+    color: var(--dorado);
+    font-family: 'Cinzel', serif;
+    text-align: center;
+    padding: 10px;
+}
+
+/* INFORMACIÓN */
+
+.informacion-pelicula {
+    min-width: 0;
+}
+
+.informacion-pelicula h3 {
+    color: var(--dorado-claro);
+    font-family: 'Cinzel', serif;
+    font-size: 19px;
+    margin-bottom: 12px;
+    overflow-wrap: anywhere;
+}
+
+.descripcion-pelicula {
+    color: #c8b9a3;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 18px;
+    white-space: pre-line;
+    overflow-wrap: anywhere;
+}
+
+.etiqueta-funciones {
+    color: var(--dorado);
+    font-family: 'Cinzel', serif;
+    font-size: 11px;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+/* =====================================
+   FUNCIONES
+===================================== */
+
+.lista-funciones {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.funcion-cartelera {
+    padding: 13px;
+    background: #160f0e;
+    border-left: 2px solid var(--dorado);
+}
+
+.detalle-funcion {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+    font-size: 13px;
+}
+
+.horario-funcion {
+    color: var(--crema);
+    font-weight: bold;
+}
+
+.costo-funcion {
+    color: var(--dorado);
+}
+
+.boton-elegir-funcion {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--dorado);
+    background: var(--rojo);
+    color: var(--dorado-claro);
+
+    font-family: 'Cinzel', serif;
+    font-size: 11px;
+    letter-spacing: 1px;
+
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.boton-elegir-funcion:hover {
+    background: #a52b38;
+    box-shadow: 0 0 15px #c9a45c44;
+}
+
+.sin-funciones {
+    color: #a9977d;
+    font-size: 13px;
+    font-style: italic;
+}
+
+/* =====================================
+   MENSAJES
+===================================== */
+
+.mensaje-cartelera {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 45px 15px;
+    color: #c8b9a3;
+    background: var(--negro-suave);
+    border: 1px solid rgba(201, 164, 92, 0.2);
+}
+
+.mensaje-final-cartelera {
+    text-align: center;
+    color: var(--dorado);
+    font-family: 'Cinzel', serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    margin-top: 65px;
+}
+
+/* =====================================
+   RESPONSIVE
+===================================== */
+
+@media (max-width: 900px) {
+
+    .lista-cartelera {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+@media (max-width: 500px) {
+
+    .contenedor-cartelera {
+        padding: 45px 5%;
+    }
+
+    .tarjeta-cartelera {
+        grid-template-columns: 105px minmax(0, 1fr);
+        gap: 14px;
+        padding: 13px;
+    }
+
+    .informacion-pelicula h3 {
+        font-size: 16px;
+    }
+
+    .descripcion-pelicula {
+        font-size: 12px;
+    }
+
+    .detalle-funcion {
+        font-size: 11px;
+    }
+
+    .encabezado-seccion h2 {
+        font-size: 15px;
+    }
+
+}

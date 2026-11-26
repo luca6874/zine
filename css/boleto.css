@@ -398,3 +398,132 @@ body {
         flex-direction: column;
     }
 }
+
+
+/* =========================================================
+   PÁGINA DE BOLETOS
+   ========================================================= */
+
+body.pagina-boletos {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 0;
+    background: var(--negro);
+}
+
+.contenedor-boletos {
+    width: 100%;
+    max-width: 1150px;
+    margin: 0 auto;
+    padding: 50px 25px;
+}
+
+.encabezado-boletos {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.encabezado-boletos h1 {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(32px, 5vw, 50px);
+    color: var(--crema);
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+}
+
+.encabezado-boletos h1 span {
+    color: var(--dorado);
+}
+
+.encabezado-boletos > p:last-child {
+    color: #c8b9a3;
+}
+
+.mensaje-boleto {
+    text-align: center;
+    color: var(--dorado-claro);
+    padding: 20px;
+    font-size: 16px;
+}
+
+.area-boleto {
+    width: 100%;
+    overflow-x: auto;
+    padding: 10px 0 25px;
+}
+
+.area-boleto[hidden],
+.acciones-boleto[hidden],
+#volver-error[hidden] {
+    display: none;
+}
+
+.acciones-boleto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-top: 25px;
+}
+
+.acciones-boleto button {
+    padding: 15px 28px;
+    background: var(--rojo);
+    border: 1px solid var(--dorado);
+    color: var(--dorado-claro);
+    font-family: 'Cinzel', serif;
+    font-size: 13px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.acciones-boleto button:hover {
+    background: #a52b38;
+    box-shadow: 0 0 20px #c9a45c55;
+}
+
+.acciones-boleto button:disabled {
+    opacity: 0.6;
+    cursor: wait;
+}
+
+.acciones-boleto a,
+#volver-error {
+    color: var(--dorado);
+    text-decoration: none;
+    font-family: 'Cinzel', serif;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+.acciones-boleto a:hover,
+#volver-error:hover {
+    color: var(--dorado-claro);
+}
+
+#volver-error {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+
+    .contenedor-boletos {
+        padding: 35px 12px;
+    }
+
+    .area-boleto {
+        padding-bottom: 20px;
+    }
+
+    .ticket-bw-wrapper,
+    .ticket-red-wrapper {
+        min-width: 900px;
+    }
+
+}
+

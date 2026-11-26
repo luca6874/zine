@@ -98,19 +98,31 @@
 
                 <h3>Programar primera función</h3>
 
-                <div class="campos-dobles">
+                            
+            <div class="campos-dobles">
 
-                    <div class="campo-admin">
-                        <label for="fecha">Fecha</label>
-                        <input type="date" id="fecha" required>
-                    </div>
-
-                    <div class="campo-admin">
-                        <label for="horario">Horario</label>
-                        <input type="time" id="horario" required>
-                    </div>
-
+                <div class="campo-admin">
+                    <label for="fecha">Fecha</label>
+                    <input type="date" id="fecha" required>
                 </div>
+
+                <div class="campo-admin">
+                    <label for="horario">Horario</label>
+                    <input type="time" id="horario" required>
+                </div>
+
+            </div>
+
+            <div class="campo-admin">
+                <label for="costo-boleto">Costo del boleto</label>
+                <input
+                    type="text"
+                    id="costo-boleto"
+                    maxlength="100"
+                    placeholder="Ej. 1 beso, una Coca, un pollito..."
+                >
+            </div>
+
 
                 <label class="checkbox-admin">
                     <input type="checkbox" id="publicada" checked>

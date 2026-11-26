@@ -61,6 +61,7 @@ async function guardarPelicula(e) {
 
     const fecha = document.getElementById("fecha").value;
     const horario = document.getElementById("horario").value;
+    const costoBoleto = document.getElementById("costo-boleto").value.trim();
 
     const publicada = document.getElementById("publicada").checked;
 
@@ -92,9 +93,9 @@ async function guardarPelicula(e) {
                     movie_id: pelicula.id,
                     show_date: fecha,
                     show_time: horario,
+                    ticket_cost: costoBoleto,
                     is_available: true
                 });
-
         // Si falla la función, intentamos eliminar
         // la película recién creada para no dejarla incompleta.
 
@@ -164,11 +165,12 @@ async function cargarPeliculas() {
                 poster_url,
                 published,
                 screenings (
-                    id,
-                    show_date,
-                    show_time,
-                    is_available
-                )
+                id,
+                show_date,
+                show_time,
+                is_available,
+                ticket_cost
+            )
             `)
             .order("created_at", { ascending: false });
 
@@ -292,6 +294,8 @@ function crearTarjetaPelicula(pelicula) {
 
     // Funciones
 
+    // Funciones
+
     const funciones = pelicula.screenings || [];
 
     funciones.forEach(funcion => {
@@ -303,7 +307,8 @@ function crearTarjetaPelicula(pelicula) {
             " · " + funcion.show_time.slice(0, 5) +
             " · " + (funcion.is_available
                 ? "Disponible"
-                : "No disponible");
+                : "No disponible") +
+            " · Costo: " + (funcion.ticket_cost || "Sin especificar");
 
         informacion.appendChild(detalle);
 

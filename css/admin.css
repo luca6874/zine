@@ -1,0 +1,401 @@
+
+/* ========================================
+   ADMINISTRACIÓN
+   CINE DE NOSOTROS
+======================================== */
+
+.pagina-admin {
+    background: #130e0d;
+    color: #f4ead5;
+    min-height: 100vh;
+}
+
+/* LOGIN */
+
+.contenedor-login {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    background:
+        radial-gradient(ellipse, #482020, #130e0d 75%);
+}
+
+.tarjeta-login {
+    width: 100%;
+    max-width: 430px;
+    padding: 45px 35px;
+    text-align: center;
+    background: #211715;
+    border: 1px solid #9c7942;
+    box-shadow: 0 15px 60px #0008;
+}
+
+.simbolo-cine {
+    color: #c9a45c;
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+.tarjeta-login h1,
+.bienvenida-admin h1 {
+    font-family: 'Cinzel', serif;
+    font-size: 27px;
+    letter-spacing: 2px;
+}
+
+.tarjeta-login h1 span,
+.bienvenida-admin h1 span {
+    color: #c9a45c;
+}
+
+.subtitulo-admin {
+    color: #c9a45c;
+    font-family: 'Cinzel', serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    margin-bottom: 12px;
+}
+
+.texto-login {
+    color: #bcae9c;
+    font-size: 14px;
+    margin: 18px 0 30px;
+}
+
+.tarjeta-login form,
+.formulario-pelicula {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    text-align: left;
+}
+
+.tarjeta-login label,
+.campo-admin label {
+    color: #e0cfae;
+    font-size: 13px;
+}
+
+.tarjeta-login input,
+.campo-admin input,
+.campo-admin textarea {
+    width: 100%;
+    padding: 13px;
+    background: #160f0e;
+    border: 1px solid #57432e;
+    color: #f4ead5;
+    outline: none;
+    font-family: inherit;
+    border-radius: 3px;
+}
+
+.tarjeta-login input:focus,
+.campo-admin input:focus,
+.campo-admin textarea:focus {
+    border-color: #c9a45c;
+}
+
+.tarjeta-login button,
+.formulario-pelicula > button {
+    padding: 15px;
+    background: #851c29;
+    border: 1px solid #c9a45c;
+    color: #f4ead5;
+    font-family: 'Cinzel', serif;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.tarjeta-login button:hover,
+.formulario-pelicula > button:hover {
+    background: #a52b38;
+}
+
+.tarjeta-login button:disabled {
+    opacity: 0.6;
+    cursor: wait;
+}
+
+#mensaje-login,
+#mensaje-formulario {
+    color: #e5a3a3;
+    font-size: 13px;
+}
+
+.volver-inicio {
+    display: inline-block;
+    margin-top: 25px;
+    color: #c9a45c;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+/* BARRA SUPERIOR */
+
+.barra-admin {
+    min-height: 75px;
+    padding: 15px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #211715;
+    border-bottom: 1px solid #80633d;
+}
+
+.usuario-admin {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    color: #c9a45c;
+    font-size: 13px;
+}
+
+.usuario-admin button,
+.boton-secundario {
+    padding: 10px 15px;
+    background: transparent;
+    border: 1px solid #9b7945;
+    color: #e9d7ae;
+    cursor: pointer;
+}
+
+.usuario-admin button:hover,
+.boton-secundario:hover {
+    background: #851c29;
+}
+
+/* CONTENEDOR */
+
+.dashboard {
+    width: min(1100px, 90%);
+    margin: 45px auto;
+}
+
+.bienvenida-admin {
+    margin-bottom: 35px;
+}
+
+.bienvenida-admin h1 {
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+
+.bienvenida-admin > p:last-child {
+    color: #bcae9c;
+    font-size: 14px;
+}
+
+/* ESTADÍSTICAS */
+
+.estadisticas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-bottom: 45px;
+}
+
+.estadistica {
+    padding: 23px;
+    background: #211715;
+    border: 1px solid #57432e;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.estadistica span {
+    color: #c9a45c;
+    font-family: 'Cinzel', serif;
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+.estadistica strong {
+    font-size: 32px;
+    color: #f4ead5;
+    font-weight: 400;
+}
+
+/* SECCIONES */
+
+.seccion-admin {
+    margin-bottom: 45px;
+}
+
+.titulo-seccion {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.titulo-seccion h2 {
+    font-family: 'Cinzel', serif;
+    color: #e9d7ae;
+    font-size: 22px;
+}
+
+.formulario-pelicula {
+    background: #211715;
+    border: 1px solid #57432e;
+    padding: 28px;
+}
+
+.formulario-pelicula h3 {
+    font-family: 'Cinzel', serif;
+    color: #c9a45c;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.campo-admin {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.campo-admin textarea {
+    min-height: 95px;
+    resize: vertical;
+}
+
+.campos-dobles {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.separador-admin {
+    border-top: 1px solid #57432e;
+    margin: 12px 0;
+}
+
+.checkbox-admin {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #d9c7a6;
+    font-size: 13px;
+}
+
+.checkbox-admin input {
+    accent-color: #851c29;
+}
+
+/* LISTA DE PELÍCULAS */
+
+.lista-peliculas {
+    display: grid;
+    gap: 15px;
+}
+
+.tarjeta-pelicula-admin {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    padding: 18px;
+    background: #211715;
+    border: 1px solid #57432e;
+}
+
+.tarjeta-pelicula-admin img {
+    width: 95px;
+    height: 125px;
+    object-fit: cover;
+    background: #382522;
+}
+
+.informacion-pelicula {
+    flex: 1;
+    min-width: 0;
+}
+
+.informacion-pelicula h3 {
+    font-family: 'Cinzel', serif;
+    color: #e9d7ae;
+    margin-bottom: 8px;
+}
+
+.informacion-pelicula p {
+    color: #bcae9c;
+    font-size: 13px;
+    margin-bottom: 6px;
+    overflow-wrap: anywhere;
+}
+
+.acciones-pelicula {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.acciones-pelicula button {
+    padding: 9px 12px;
+    border: 1px solid #80633d;
+    color: #e9d7ae;
+    background: transparent;
+    cursor: pointer;
+}
+
+.acciones-pelicula button:hover {
+    background: #851c29;
+}
+
+.estado-publicacion {
+    color: #c9a45c !important;
+    font-weight: bold;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 650px) {
+
+    .barra-admin {
+        flex-direction: column;
+        gap: 18px;
+        padding: 20px 10px;
+    }
+
+    .usuario-admin {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .dashboard {
+        width: 92%;
+        margin: 30px auto;
+    }
+
+    .estadisticas {
+        grid-template-columns: 1fr;
+    }
+
+    .campos-dobles {
+        grid-template-columns: 1fr;
+    }
+
+    .bienvenida-admin h1 {
+        font-size: 26px;
+    }
+
+    .formulario-pelicula {
+        padding: 18px;
+    }
+
+    .tarjeta-pelicula-admin {
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .tarjeta-pelicula-admin img {
+        width: 75px;
+        height: 100px;
+    }
+
+    .acciones-pelicula {
+        width: 100%;
+    }
+}

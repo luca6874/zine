@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Administración | Cine de Nosotros</title>
+
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/admin.css">
+</head>
+
+<body class="pagina-admin">
+
+    <main class="contenedor-login">
+
+        <section class="tarjeta-login">
+
+            <div class="simbolo-cine">✦</div>
+
+            <p class="subtitulo-admin">ACCESO PRIVADO</p>
+
+            <h1>CINE DE <span>NOSOTROS</span></h1>
+
+            <p class="texto-login">
+                Bienvenido al centro de administración.
+            </p>
+
+            <form id="form-login">
+
+                <label for="correo">Correo electrónico</label>
+                <input
+                    type="email"
+                    id="correo"
+                    placeholder="Tu correo"
+                    required
+                >
+
+                <label for="contrasena">Contraseña</label>
+                <input
+                    type="password"
+                    id="contrasena"
+                    placeholder="Tu contraseña"
+                    required
+                >
+
+                <p id="mensaje-login" role="alert"></p>
+
+                <button type="submit" id="btn-login">
+                    INICIAR SESIÓN
+                </button>
+
+            </form>
+
+            <a href="../index.html" class="volver-inicio">
+                ← Volver al cine
+            </a>
+
+        </section>
+
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../js/supabase.js"></script>
+    <script src="../js/auth.js"></script>
+
+    <script>
+        const formulario = document.getElementById("form-login");
+        const mensaje = document.getElementById("mensaje-login");
+        const boton = document.getElementById("btn-login");
+
+        formulario.addEventListener("submit", async (e) => {
+            e.preventDefault();
+
+            boton.disabled = true;
+            boton.textContent = "VERIFICANDO...";
+
+            const correo = document.getElementById("correo").value;
+            const contrasena = document.getElementById("contrasena").value;
+
+            const resultado = await iniciarSesion(correo, contrasena);
+
+            if (resultado.success) {
+                window.location.href = "dashboard.html";
+                return;
+            }
+
+            mensaje.textContent = resultado.message;
+            boton.disabled = false;
+            boton.textContent = "INICIAR SESIÓN";
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,157 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard | Cine de Nosotros</title>
+
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/admin.css">
+</head>
+
+<body class="pagina-admin">
+
+    <header class="barra-admin">
+
+        <a href="../index.html" class="logo">
+            ✦ CINE DE NOSOTROS
+        </a>
+
+        <div class="usuario-admin">
+            <span>Administración</span>
+            <button id="btn-cerrar-sesion">Cerrar sesión</button>
+        </div>
+
+    </header>
+
+    <main class="dashboard">
+
+        <section class="bienvenida-admin">
+            <p class="subtitulo-admin">CENTRO DE CONTROL</p>
+            <h1>Bienvenido al <span>cine.</span></h1>
+            <p>Administra las películas y funciones disponibles.</p>
+        </section>
+
+        <section class="estadisticas">
+
+            <article class="estadistica">
+                <span>PELÍCULAS</span>
+                <strong id="total-peliculas">0</strong>
+            </article>
+
+            <article class="estadistica">
+                <span>FUNCIONES</span>
+                <strong id="total-funciones">0</strong>
+            </article>
+
+            <article class="estadistica">
+                <span>PUBLICADAS</span>
+                <strong id="total-publicadas">0</strong>
+            </article>
+
+        </section>
+
+        <section class="seccion-admin">
+
+            <div class="titulo-seccion">
+                <div>
+                    <p class="subtitulo-admin">CATÁLOGO</p>
+                    <h2>Administrar películas</h2>
+                </div>
+            </div>
+
+            <form id="form-pelicula" class="formulario-pelicula">
+
+                <h3>Agregar nueva película</h3>
+
+                <div class="campo-admin">
+                    <label for="titulo">Nombre de la película</label>
+                    <input
+                        type="text"
+                        id="titulo"
+                        maxlength="150"
+                        placeholder="Ej. Iron Man 2"
+                        required
+                    >
+                </div>
+
+                <div class="campo-admin">
+                    <label for="descripcion">Descripción</label>
+                    <textarea
+                        id="descripcion"
+                        placeholder="Una breve descripción..."
+                    ></textarea>
+                </div>
+
+                <div class="campo-admin">
+                    <label for="portada">URL de la portada</label>
+                    <input
+                        type="url"
+                        id="portada"
+                        placeholder="https://..."
+                    >
+                </div>
+
+                <div class="separador-admin"></div>
+
+                <h3>Programar primera función</h3>
+
+                <div class="campos-dobles">
+
+                    <div class="campo-admin">
+                        <label for="fecha">Fecha</label>
+                        <input type="date" id="fecha" required>
+                    </div>
+
+                    <div class="campo-admin">
+                        <label for="horario">Horario</label>
+                        <input type="time" id="horario" required>
+                    </div>
+
+                </div>
+
+                <label class="checkbox-admin">
+                    <input type="checkbox" id="publicada" checked>
+                    Publicar película en la cartelera
+                </label>
+
+                <p id="mensaje-formulario" role="status"></p>
+
+                <button type="submit" id="btn-guardar">
+                    + AGREGAR PELÍCULA
+                </button>
+
+            </form>
+
+        </section>
+
+        <section class="seccion-admin">
+
+            <div class="titulo-seccion">
+                <div>
+                    <p class="subtitulo-admin">GESTIÓN</p>
+                    <h2>Películas registradas</h2>
+                </div>
+
+                <button id="btn-actualizar" class="boton-secundario">
+                    Actualizar
+                </button>
+            </div>
+
+            <div id="lista-peliculas" class="lista-peliculas">
+                <p>Cargando películas...</p>
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../js/supabase.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/peliculas.js"></script>
+
+</body>
+</html>
